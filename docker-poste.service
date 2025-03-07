@@ -1,0 +1,12 @@
+[Unit]
+Description=poste
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/bash /root/poste-up.sh
+ExecStop=/usr/bin/bash /root/poste-down.sh
+
+[Install]
+WantedBy=default.target
